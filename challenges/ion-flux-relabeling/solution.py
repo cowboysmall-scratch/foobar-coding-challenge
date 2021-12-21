@@ -39,6 +39,7 @@ def main(argv):
     print()
 
 
+
     print()
     print()
     print("Detailed comparison of the results from both solutions:")

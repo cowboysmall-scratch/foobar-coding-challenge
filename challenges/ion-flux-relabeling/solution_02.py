@@ -7,7 +7,7 @@ def solution(h, q):
         interval = end - start
         if interval == 0:
             return parent
-        elif interval == 3:
+        elif interval == 2:
             if value == start or value == start + 1:
                 return end
             else:
