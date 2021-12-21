@@ -44,16 +44,16 @@ def main(argv):
     print("Detailed comparison of the results from both solutions:")
     print()
 
-    h  = int(argv[0]) if len(argv) > 1 else 10
-    v  = [i for i in range(1, 2**h)]
+    h  = int(argv[0]) if len(argv) > 0 else 10
+    q  = [i for i in range(1, 2**h)]
 
-    p1 = solution_01.solution(h, v)
-    p2 = solution_02.solution(h, v)
+    p1 = solution_01.solution(h, q)
+    p2 = solution_02.solution(h, q)
 
-    m  = [(i, v1) for i, (v1, v2) in enumerate(zip(p1, p2)) if v1 != v2]
+    m  = [(v0, v1) for (v0, v1, v2) in zip(q, p1, p2) if v1 != v2]
 
     print("         height: {}".format(h))
-    print("          total: {}".format(len(v)))
+    print("          total: {}".format(len(q)))
     print("     mismatched: {}".format(len(m)))
     if m:
         print("     mismatches: {}".format(m))
