@@ -1,15 +1,25 @@
+import sys
+import solution_01
 
-def solution(i):
 
-    def primes(n):
-        N = n**2
-        p = [1] * N
 
-        for j in range(2, n):
-            if p[j]:
-                for k in range(j**2, N, j):
-                    p[k] = 0
+def main(argv):
 
-        return ''.join([str(l) for l in range(N) if p[l] == 1][2:])
+    print()
+    print("Solution 1: ")
+    print("     input: 0")
+    print("  expected: 23571")
+    print("    actual: {}".format(solution_01.solution(0)))
+    print()
 
-    return primes(143)[i:i + 5]
+    print()
+    print("Solution 1: ")
+    print("     input: 3")
+    print("  expected: 71113")
+    print("    actual: {}".format(solution_01.solution(3)))
+    print()
+
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
