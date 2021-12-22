@@ -42,10 +42,10 @@ def main(argv):
 
     print()
     print()
-    print("Detailed comparison of the results from both solutions:")
+    print("Detailed comparison of the results from both solutions for height 10:")
     print()
 
-    h  = int(argv[0]) if len(argv) > 0 else 10
+    h  = 10
     q  = list(range(1, 2**h))
 
     p1 = solution_01.solution(h, q)
