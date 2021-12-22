@@ -46,7 +46,7 @@ def main(argv):
     print()
 
     h  = int(argv[0]) if len(argv) > 0 else 10
-    q  = [i for i in range(1, 2**h)]
+    q  = list(range(1, 2**h))
 
     p1 = solution_01.solution(h, q)
     p2 = solution_02.solution(h, q)
