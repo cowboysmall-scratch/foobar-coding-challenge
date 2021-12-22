@@ -51,7 +51,7 @@ def main(argv):
     p1 = solution_01.solution(h, q)
     p2 = solution_02.solution(h, q)
 
-    m  = [(v0, v1) for (v0, v1, v2) in zip(q, p1, p2) if v1 != v2]
+    m  = [(v0, v1, v2) for (v0, v1, v2) in zip(q, p1, p2) if v1 != v2]
 
     print("         height: {}".format(h))
     print("          total: {}".format(len(q)))
