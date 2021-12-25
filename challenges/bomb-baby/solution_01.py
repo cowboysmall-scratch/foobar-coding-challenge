@@ -11,4 +11,5 @@ def solution(M, F):
         return p, c - 1
 
     p, c = gcd(int(M), int(F))
+
     return str(c) if p == 1 else "impossible"
