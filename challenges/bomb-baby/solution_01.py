@@ -6,7 +6,7 @@ def solution(M, F):
 
         while q != 0:
             c += p // q
-            p, q = q, p%q
+            p, q = q, p % q
 
         return p, c - 1
 

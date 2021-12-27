@@ -67,8 +67,8 @@ def solution(dimensions, your_position, trainer_position, distance):
 
 
     c = 0
-    for _, v in aa.iteritems():
-        if v[2] == 1:
+    for k in aa:
+        if aa[k][2] == 1:
             c += 1
 
     return c
