@@ -18,6 +18,10 @@ def solution(banana_list):
         s = (p + q) // gcd(p, q)
         return s & (s - 1) == 0 and s != 0
 
+    def add_loop(g1, g2):
+        loop[g1].append(g2)
+        loop[g2].append(g1)
+
     def sort_guards():
         guards.sort(key = lambda g: len(loop[g]))
 
@@ -39,8 +43,7 @@ def solution(banana_list):
 
     for c in combinations(guards, 2):
         if not exits(c[0][1], c[1][1]):
-            loop[c[0]].append(c[1])
-            loop[c[1]].append(c[0])
+            add_loop(c[0], c[1])
 
 
     while len(guards) > 1:
