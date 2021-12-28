@@ -66,10 +66,4 @@ def solution(dimensions, your_position, trainer_position, distance):
             aa[a] = (p[0], p[1], p[2], d)
 
 
-    c = 0
-    for k in aa:
-        if aa[k][2] == 1:
-            c += 1
-
-    return c
-
+    return len([k for k in aa if aa[k][2] == 1])

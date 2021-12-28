@@ -25,7 +25,7 @@ def solution(banana_list):
     def sort_guards():
         guards.sort(key = lambda g: len(loop[g]))
 
-    def get_pair():
+    def find_pair():
         for g in guards[1:]:
             if g in loop[guards[0]]:
                 return (guards[0], g)
@@ -49,7 +49,7 @@ def solution(banana_list):
     while len(guards) > 1:
 
         sort_guards()
-        p = get_pair()
+        p = find_pair()
 
         if not p:
             p = (guards[0], guards[1])
