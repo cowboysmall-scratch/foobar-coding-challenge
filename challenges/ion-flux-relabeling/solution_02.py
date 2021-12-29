@@ -8,10 +8,10 @@ def solution(h, q):
         if interval == 0:
             return parent
         elif interval == 2:
-            if value == start or value == start + 1:
-                return end
-            else:
+            if value == end:
                 return parent
+            else:
+                return end
         else:
             if value == end:
                 return parent

@@ -19,6 +19,13 @@ def main(argv):
     print("    actual: {}".format(solution_01.solution(15)))
     print("")
 
+    print("")
+    print("Solution 1: ")
+    print("     input: 13")
+    print("  expected: 5")
+    print("    actual: {}".format(solution_01.solution(13)))
+    print("")
+
 
 
 if __name__ == "__main__":
