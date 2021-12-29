@@ -7,6 +7,5 @@ res = []
 
 for i, c in enumerate(base64.b64decode(mes)):
     res.append(chr(ord(key[i % len(key)]) ^ ord(c)))
-    # res.append(chr(ord(key[i % len(key)]) ^ c))
 
 print(''.join(res))
