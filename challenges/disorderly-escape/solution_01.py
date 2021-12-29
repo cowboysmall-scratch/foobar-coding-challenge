@@ -14,6 +14,11 @@ def solution(w, h, s):
     def lcm(p, q):
         return p * q // gcd(p, q)
 
+    def cycle_combs(n):
+        c = []
+        cycle_combs_rec(1, n, 0, c)
+        return c
+
     def cycle_combs_rec(i, n, l, c, t = []):
         if n == 0:
             c.append(list(Counter(t[:l]).items()))
@@ -22,11 +27,6 @@ def solution(w, h, s):
             t.append(j)
             cycle_combs_rec(j, n - j, l + 1, c, t)
             t.pop()
-
-    def cycle_combs(n):
-        c = []
-        cycle_combs_rec(1, n, 0, c)
-        return c
 
     def calc_coeff(c):
         cf = 1
