@@ -11,6 +11,7 @@ def solution(dimensions, your_position, trainer_position, distance):
     m_y  = ((y + distance) // h) + 1
 
     dd   = distance**2
+    aa   = {}
 
 
     def reflect(x1, y1, n, m):
@@ -40,7 +41,6 @@ def solution(dimensions, your_position, trainer_position, distance):
     pp4 = [( p[0], -p[1], p[2]) for p in pp1 if l2( p[0], -p[1]) <= dd]
 
 
-    aa = {}
     for p in pp1:
         d = l2(p[0], p[1])
         a = angle(p[0], p[1])

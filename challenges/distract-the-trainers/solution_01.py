@@ -4,9 +4,9 @@ from itertools   import combinations
 
 
 def solution(banana_list):
-    loop   = defaultdict(list)
     guards = list(enumerate(banana_list))
-    count  = len(guards)
+    count  = len(banana_list)
+    loop   = defaultdict(list)
 
 
     def gcd(p, q):
