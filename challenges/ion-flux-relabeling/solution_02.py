@@ -1,5 +1,4 @@
 
-
 def solution(h, q):
     root = 2**h - 1
 
@@ -22,4 +21,3 @@ def solution(h, q):
                 return process(start + delta, end - 1, end, value)
 
     return [process(1, root, -1, v) for v in q]
-

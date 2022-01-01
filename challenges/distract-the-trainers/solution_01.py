@@ -45,18 +45,13 @@ def solution(banana_list):
         if not exits(c[0][1], c[1][1]):
             add_loop(c[0], c[1])
 
-
     while len(guards) > 1:
-
         sort_guards()
         p = find_pair()
-
         if not p:
             p = (guards[0], guards[1])
         else:
             count -= 2
-
         remove_pair(p)
-
 
     return count

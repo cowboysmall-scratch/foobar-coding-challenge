@@ -4,7 +4,6 @@ import math
 
 def solution(n):
     n = int(n)
-
     c = 0
 
     while n > 1:

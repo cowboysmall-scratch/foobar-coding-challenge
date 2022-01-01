@@ -7,6 +7,7 @@ from collections import Counter
 def solution(w, h, s):
     total = 0
 
+
     def gcd(p, q):
         while q:
             p, q = q, p % q
@@ -55,6 +56,5 @@ def solution(w, h, s):
     for row_cycle, row_denom in zip(row_cycles, row_denoms):
         for col_cycle, col_denom in zip(col_cycles, col_denoms):
             total += Fraction(numerator(row_cycle, col_cycle, s), row_denom * col_denom)
-
 
     return str(total)

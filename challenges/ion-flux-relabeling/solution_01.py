@@ -1,5 +1,4 @@
 
-
 class Node:
 
     def __init__(self):
@@ -7,7 +6,6 @@ class Node:
         self.left = None
         self.right = None
         self.value = 0
-
 
 
 def perfect_binary_tree(height, parent):
@@ -21,19 +19,16 @@ def perfect_binary_tree(height, parent):
     return r
 
 
-
 def post_order(node):
     if node == None:
         return []
     return post_order(node.left) + post_order(node.right) + [node]
 
 
-
 def relabel_nodes(root):
     nodes = post_order(root)
     for i in range(len(nodes)):
         nodes[i].value = i + 1
-
 
 
 def find_node(node, value):
@@ -46,10 +41,8 @@ def find_node(node, value):
     return find_node(node.left, value) or find_node(node.right, value)
 
 
-
 def solution(h, q):
     root  = perfect_binary_tree(h, None)
     relabel_nodes(root)
     nodes = [find_node(root, n) for n in q]
     return [n.parent.value if n.parent else -1 for n in nodes]
-
