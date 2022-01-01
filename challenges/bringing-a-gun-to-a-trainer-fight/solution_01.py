@@ -35,11 +35,9 @@ def solution(dimensions, your_position, trainer_position, distance):
             if l2(*p) <= dd:
                 pp1.append((p[0], p[1], 1))
 
-
     pp2 = [(-p[0],  p[1], p[2]) for p in pp1 if l2(-p[0],  p[1]) <= dd]
     pp3 = [(-p[0], -p[1], p[2]) for p in pp1 if l2(-p[0], -p[1]) <= dd]
     pp4 = [( p[0], -p[1], p[2]) for p in pp1 if l2( p[0], -p[1]) <= dd]
-
 
     for p in pp1:
         d = l2(p[0], p[1])
@@ -64,6 +62,5 @@ def solution(dimensions, your_position, trainer_position, distance):
         a = angle(p[0], p[1])
         if d > 0 and (a not in aa or d < aa[a][3]):
             aa[a] = (p[0], p[1], p[2], d)
-
 
     return len([k for k in aa if aa[k][2] == 1])

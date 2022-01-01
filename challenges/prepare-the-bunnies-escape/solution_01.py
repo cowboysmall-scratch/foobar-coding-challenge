@@ -21,10 +21,9 @@ def solution(map):
 
         for dx, dy, dz in D:
             di, dj, dk = i + dx, j + dy, k + dz
-            if 0 <= di < h and 0 <= dj < w and 0 <= dk < b + 1:
-                if (di, dj, dk) not in V:
-                    if k == dk and G[di][dj][dk] == 0 or k < dk and G[di][dj][dk] == 1:
-                        V.add((di, dj, dk))
-                        Q.append((di, dj, dk, l + 1))
+            if 0 <= di < h and 0 <= dj < w and 0 <= dk < b + 1 and (di, dj, dk) not in V:
+                if k == dk and G[di][dj][dk] == 0 or k < dk and G[di][dj][dk] == 1:
+                    V.add((di, dj, dk))
+                    Q.append((di, dj, dk, l + 1))
 
     return -1
