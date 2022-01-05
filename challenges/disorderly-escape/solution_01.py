@@ -13,9 +13,6 @@ def solution(w, h, s):
             p, q = q, p % q
         return p
 
-    def lcm(p, q):
-        return p * q // gcd(p, q)
-
     def cycles(n):
         c = []
 
@@ -38,22 +35,16 @@ def solution(w, h, s):
             d *= v**f * factorial(f)
         return d
 
-    def numerator(c1, c2, s):
-        n = 1
+    def exponent(c1, c2):
+        n = 0
         for v1, f1 in c1:
             for v2, f2 in c2:
-                n *= s**((v1 * f1 * v2 * f2) // lcm(v1, v2))
+                n += f1 * f2 * gcd(v1, v2)
         return n
 
 
-    row_cycles = cycles(h)
-    col_cycles = cycles(w)
-
-    row_denoms = [denominator(rc) for rc in row_cycles]
-    col_denoms = [denominator(cc) for cc in col_cycles]
-
-    for row_cycle, row_denom in zip(row_cycles, row_denoms):
-        for col_cycle, col_denom in zip(col_cycles, col_denoms):
-            total += Fraction(numerator(row_cycle, col_cycle, s), row_denom * col_denom)
+    for row_cycle in cycles(h):
+        for col_cycle in cycles(w):
+            total += Fraction(s**exponent(row_cycle, col_cycle), denominator(row_cycle) * denominator(col_cycle))
 
     return str(total)
