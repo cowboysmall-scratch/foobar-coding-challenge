@@ -36,11 +36,11 @@ def solution(w, h, s):
         return d
 
     def exponent(c1, c2):
-        n = 0
+        e = 0
         for v1, f1 in c1:
             for v2, f2 in c2:
-                n += f1 * f2 * gcd(v1, v2)
-        return n
+                e += f1 * f2 * gcd(v1, v2)
+        return e
 
 
     for row_cycle in cycles(h):
