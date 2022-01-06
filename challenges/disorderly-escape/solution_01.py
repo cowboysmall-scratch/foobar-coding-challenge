@@ -29,7 +29,7 @@ def solution(w, h, s):
 
         return c
 
-    def denominator(c):
+    def denom(c):
         d = 1
         for v, f in c:
             d *= v**f * factorial(f)
@@ -43,8 +43,14 @@ def solution(w, h, s):
         return e
 
 
-    for row_cycle in cycles(h):
-        for col_cycle in cycles(w):
-            total += Fraction(s**exponent(row_cycle, col_cycle), denominator(row_cycle) * denominator(col_cycle))
+    row_cycles = cycles(h)
+    col_cycles = cycles(w)
+
+    row_denoms = [denom(rc) for rc in row_cycles]
+    col_denoms = [denom(cc) for cc in col_cycles]
+
+    for row_cycle, row_denom in zip(row_cycles, row_denoms):
+        for col_cycle, col_denom in zip(col_cycles, col_denoms):
+            total += Fraction(s**exponent(row_cycle, col_cycle), row_denom * col_denom)
 
     return str(total)
